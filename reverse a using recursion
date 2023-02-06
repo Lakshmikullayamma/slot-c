@@ -16,3 +16,19 @@ int main()
  
     return 0;
     }
+    }
+ 
+void revstr(char *z, int start, int end)
+{
+    char ch;
+ 
+    if (start >= end)
+       return;
+ 
+    ch = *(z+start);
+    *(z+start) = *(z+end);
+    *(z+end) = ch;
+ 
+    revstr(z, ++start, --end);
+}
+
